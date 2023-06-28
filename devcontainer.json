@@ -1,0 +1,25 @@
+{
+    "name": "PHP Development",
+    "image": "my-php-app",
+    "appPort": [80],
+    "mounts": [
+      "source=${localWorkspaceFolder},target=/var/www/html,type=bind,consistency=cached"
+    ],
+    "remoteUser": "root",
+    "containerEnv": {
+      "DB_HOST": "host.docker.internal",
+      "DB_USER": "root",
+      "DB_PASSWORD": "",
+      "DB_NAME": "krankencare"
+    },
+    "overrideCommand": false,
+    "runArgs": ["-v", "/var/run/docker.sock:/var/run/docker.sock"],
+    "postCreateCommand": "docker-php-ext-install mysqli",
+    "customizations": {
+      "vscode": {
+        "extensions": ["ms-azuretools.vscode-docker"],
+        "settings": {}
+      }
+    }
+  }
+  
