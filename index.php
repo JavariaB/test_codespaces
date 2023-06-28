@@ -6,7 +6,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id']));
 
 $error = $success = '';
 
-$conn = mysqli_connect('host.docker.internal', 'root', '', 'krankencare');
+$conn = mysqli_connect('localhost', 'root', '', 'krankencare');
 
 try {
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
